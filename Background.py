@@ -2,14 +2,19 @@ import pygame
 
 class Background():
     def __init__(self,screen, screen_size):
+        self.screen = screen
          # get image off of hd and load into pygame
-    # Returns a Surface object
+        # Returns a Surface object
         self.background_image = pygame.image.load("./images/background4.png")
         # scale takes 2 args 
         # 1. what to scale 
         # 2. tuple of new coords
         self.background_image = pygame.transform.scale(self.background_image, screen_size)
         self.background_rect = self.background_image.get_rect()
+
+        
+        
+    def draw_bg(self,screen):
 
         # change size of the image
         # scale method
