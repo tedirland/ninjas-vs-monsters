@@ -8,10 +8,13 @@ class Player():
 
     def __init__(self,screen) -> None:
         self.screen = screen
+        self.x = 200
+        self.y = 200
         #load image to background
         self.image = pygame.image.load("./images/ninja/Idle__000.png")
+        self.image = pygame.transform.scale_by(self.image, .35)
         # get the coords of the image
         self.rect = self.image.get_rect()
         
-    def move_player(self,screen):
-        screen.blit(self.image,self.rect)
+    def draw_player(self,screen):
+        screen.blit(self.image,(self.x, self.y))
